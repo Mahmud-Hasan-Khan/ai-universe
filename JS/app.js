@@ -7,8 +7,14 @@ const loadData = async () => {
     displayData(data.data.tools.slice(0, 6));
 }
 
+// default image 
+function imagError(e) {
+    e.src = 'imgNotFound.png'
+}
+
 // display data to UI
 const displayData = (alTools) => {
+    console.log(alTools);
     // get the container
     const AlContainer = document.getElementById('al-container');
 
@@ -19,6 +25,10 @@ const displayData = (alTools) => {
     const spinner = document.getElementById("spinner");
     spinner.style.display = "block";
 
+    const defaultImageUrl = './imgNotFound.png'
+    console.log(defaultImageUrl);
+
+
     // get Al Tools info
     alTools.forEach((alTool) => {
 
@@ -28,7 +38,7 @@ const displayData = (alTools) => {
         // set innerText innerHtml
         containerDiv.innerHTML = `
         <div class="card w-full h-full bg-base-100 shadow-2xl p-4">
-            <figure><img src="${alTool.image}" alt="" /></figure>
+            <figure><img id="img1" onerror="imagError(this)" src="${alTool.image}" alt="image"  /></figure>
             <div class="card-body">
                 <h2 class="card-title">Features</h2>
                 <ol class="list-decimal text-left">
@@ -52,6 +62,9 @@ const displayData = (alTools) => {
     `;
         // append Child
         AlContainer.appendChild(containerDiv);
+
+
+
     });
 
     spinner.style.display = "none";
