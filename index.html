@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Universe Hub</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.5/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/1e887a551d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <h1 class="text-center text-5xl font-semibold mt-6">AI Universe Hub</h1>
+    </header>
+
+    <main class="text-center m-4">
+
+        <!-- Button for sort by date  -->
+        <button onclick="sortByDate()" id="btn-sort-by-date"
+            class="bg-[#EB5757] p-4 rounded-xl text-white text-xl font-semibold">Sort By
+            Date</button>
+
+        <!-- Spinner/Loader -->
+        <div style="height: 100vh;" id="spinner" class="flex justify-center items-center">
+            <button class="btn loading bg-[#f03e3e] text-white text-xl font-semibold border-0">Loading
+            </button>
+        </div>
+
+        <!-- Display Al Tools Info -->
+        <section id="al-container"
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center my-6">
+        </section>
+
+        <!-- Button for display all Al Tools -->
+        <button onclick="seeAllData()" id="btn-see-more"
+            class="bg-[#EB5757] p-4 rounded-xl text-white text-xl font-semibold">See More</button>
+
+        <!-- Modal -->
+        <section>
+            <input type="checkbox" id="my-modal-3" class="modal-toggle" />
+            <div class="modal" id="modal-info"></div>
+        </section>
+
+
+    </main>
+
+    <script src="JS/app.js"></script>
+</body>
+
+</html>
